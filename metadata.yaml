@@ -1,0 +1,122 @@
+# To be filled by the author(s) at the time of submission
+# -------------------------------------------------------
+
+# Title of the article:
+#  - For a successful replication, it shoudl be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
+title: "[Re] A three-layer model for the flow of particulate suspensions driven by sedimentation"
+
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author
+authors:
+  - name: Ibrahim Hmamou
+    orcid: 0009-0007-3756-3551
+    email: ibrahim.hmamou@cnrs.fr
+    affiliations: 1,* # * is for contact author
+
+  - name: Olivier Delestre
+    orcid: 0009-0004-2057-4762
+    email: olivier.delestre@univ-cotedazur.fr
+    affiliations: 2,3
+
+  - name: Carine Lucas
+    orcid: 0000-0003-1700-4553
+    email: carine.lucas@univ-orleans.fr
+    affiliations: 1
+
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
+affiliations:
+  - code: 1
+    name: Université d’Orléans, Université de Tours, CNRS, IDP, UMR 7013
+    address: Orléans, France
+
+  - code: 2
+    name: Laboratoire Jean Alexandre Dieudonné, Université Côte d’Azur
+    address: Nice, France
+
+  - code: 3
+    name: Polytech’Lab, Université Côte d’Azur
+    address: Nice, France
+
+# List of keywords (adding the programming language might be a good idea)
+keywords: replicability, numerical simulations of deposit, C++
+
+# Code URL and DOI (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo,
+#   see https://guides.github.com/activities/citable-code/
+code:
+  - url: https://plmlab.math.cnrs.fr/ltoti92/sednash
+  - doi:
+
+# Date URL and DOI (optional if no data)
+data:
+  - url: https://doi.org/10.57745/IV4SE8
+  - doi:
+
+# Information about the original article that has been replicated
+replication:
+  - cite: Andrea Bondesan, Laurence Girolami, François James, Loïc Rousseau; \textit{A three-layer model for the flow of particulate suspensions driven by sedimentation}. \textbf{Physics of Fluids} 1 April 2025; 37 (4) 043327. https://doi.org/10.1063/5.0261889 # Full textual citation
+  - bib: Andrea Bondesan, Laurence Girolami, François James, Loïc Rousseau;Athree-layer model for the flow of particulate suspensions driven by sedimentation.Physics ofFluids1 April 2025; 37 (4) 043327. \\ https://doi.org/10.1063/5.0261889. # Bibtex key (if any) in your bibliography file
+  - url: https://doi.org/10.1063/5.0261889 # URL to the PDF, try to link to a non-paywall version
+  - doi: 10.1063/5.0261889
+  # Regular digital object identifier
+
+# Don't forget to surround abstract with double quotes
+abstract: ""
+
+# Bibliography file (yours)
+bibliography: bibliography.bib
+
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
+type: Replication
+
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
+domain: Geophysics
+
+# Coding language (main one only if several)
+language: C++
+
+# To be filled by the author(s) after acceptance
+# -----------------------------------------------------------------------------
+
+# For example, the URL of the GitHub issue where review actually occured
+review:
+  - url:
+
+contributors:
+  - name:
+    orcid:
+    role: editor
+  - name:
+    orcid:
+    role: reviewer
+  - name:
+    orcid:
+    role: reviewer
+
+# This information will be provided by the editor
+dates:
+  - received:
+  - accepted:
+  - published:
+
+# This information will be provided by the editor
+article:
+  - number: # Article number will be automatically assigned during publication
+  - doi: # DOI from Zenodo
+  - url: # Final PDF URL (Zenodo or rescience website?)
+
+# This information will be provided by the editor
+journal:
+  - name: "ReScience C"
+  - issn:
+  - volume:
+  - issue:
