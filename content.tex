@@ -41,9 +41,9 @@ In the original work~\cite{Andrea}, a new mathematical model was introduced to s
 In \cite{Andrea}, numerical results are then compared with experiments.
 The equations that describe the mathematical model are available in the original work, but the code solving their numerical approximations was not made available.\\
 
-This article is structured as follow: first, we recall the model of the original article~\cite{Andrea}. Then, thank to the references, we re-write the complete numerical scheme and we precise the choices we made when necessary.
-In a following section, we plot the numerical results given by the C++ software we wrote (SednaSh, available at \url{https://plmlab.math.cnrs.fr/ltoti92/sednash}).
-Finaly, the last section is devoted to a more precise comparison with the numerical results obtained by the authors of the original article.
+This article is structured as follow: first, we recall the model of the original article~\cite{Andrea}. Then, thanks to the references, we re-write the complete numerical scheme and we precise the choices we made when necessary.
+In the following section, we plot the numerical results given by the C++ software we wrote (SednaSh, available at \url{https://plmlab.math.cnrs.fr/ltoti92/sednash}).
+Finally, the last section is devoted to a more precise comparison with the numerical results obtained by the authors of the original article.
 
 \section{Model}
 Let us recall the original model~\cite[eq.~(10)--(14)]{Andrea}:
@@ -277,7 +277,7 @@ Note that to properly handle the wet-dry transition for both the upper and lower
 The experiments were performed in a channel of total length $L=3.605$~m, with a reservoir of length $x^{in}=0.105$~m (see figure \ref{fig:expe}) during $T_{end}=4$~s (but the suspension layer disappears before this time). In the reservoir, the suspension expands up to $h^{in}=0.27$~m height, but, after the gravitational collapse lasting $t_{f\!f}\approx 0.23$~s, falls to
 $h_{app}=\varepsilon x^{in}$ with $\varepsilon=10^{-1}$.
 
- The experiments where performed with several values of the dilatation rate:
+ The experiments were performed with several values of the dilatation rate:
  $$E=\{1.12, 1.17, 1.22, 1.28, 1.35, 1.42\}.$$
  The volume fraction of the deposit is $\phi_{pack} = 0.58$ and the volume fraction of the suspension is $\phi_{s}=\phi_{pack}/E$. The densities are $\rho_{s} = 2500$~kg~m\textsuperscript{-3} for the suspension, $\rho_{f} = 998$~kg~m\textsuperscript{-3} for the fluid and $\rho_{m}= \phi_s \rho_s + (1 - \phi_s) \rho_f$ is the mixture density. The diameter of the particles is $d=350\times 10^{-6}$~m,
  and their sedimentation velocity is computed as $$U_{sed} = \frac{g(\rho_s - \rho_f) d^2}{18 \mu_f (1-\phi_s) F_1 F_2}$$
@@ -316,7 +316,7 @@ The original results are reproduced in figure~\ref{fig:Andrea}. In order to simp
     \label{fig:Andrea}
 \end{figure}
 
-As in the original article, one can note that, in figure~\ref{fig:res}, our experimental results are better fitted when the expansion is larger. If we now compare the two sets of numerical results with each other, the figures are very similar, regardless of the value of the expansion, between the original paper and this study.
+As in the original article, one can note that, in figure~\ref{fig:res}, our results fit the experimental data better when the expansion is larger. If we now compare the two sets of numerical results with each other, the figures are very similar, regardless of the value of the expansion, between the original paper and this study.
 
 \medskip
 
@@ -491,4 +491,4 @@ A more in-depth analysis must be carried out to analyse these differences. A com
 
 
 \section*{Acknowledgments}
-This work was founded by the France 2030 program "ANR-23-EXMA-0004" (PEPR Maths-Vives) through the Complexflows project.
+This work was funded by the France 2030 program "ANR-23-EXMA-0004" (PEPR Maths-Vives) through the Complexflows project.
