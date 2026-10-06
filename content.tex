@@ -42,7 +42,7 @@ In \cite{Andrea}, numerical results are then compared with experiments.
 The equations that describe the mathematical model are available in the original work, but the code solving their numerical approximations was not made available.\\
 
 This article is structured as follow: first, we recall the model of the original article~\cite{Andrea}. Then, thanks to the references, we re-write the complete numerical scheme and we precise the choices we made when necessary.
-In the following section, we plot the numerical results given by the C++ software we wrote (SednaSh, available at \url{https://plmlab.math.cnrs.fr/ltoti92/sednash}).
+In the following section, we plot the numerical results given by the C++ software we wrote (SednaSh version 1.0.0, available at \url{https://plmlab.math.cnrs.fr/ltoti92/sednash}).
 Finally, the last section is devoted to a more precise comparison with the numerical results obtained by the authors of the original article.
 
 \section{Model}
@@ -94,8 +94,8 @@ The $C_{sed}$ coefficient is a correction of the sedimentation velocity ($C_{sed
     \SetKwInOut{Input}{Input}
     \SetKwInOut{Output}{Output}
 
-    \Input{Experimental target $x_{exp}^{max}$, Search range $\Omega$}
-    \Output{Optimized parameter $C_{sed}$}
+    \Input{ Experimental target $x_{exp}^{max}$, Search range $\Omega$}
+    \Output{ Optimized parameter $C_{sed}$}
 
     \BlankLine
     \textbf{Function} \text{EvaluateError}($C$):\\
@@ -283,28 +283,28 @@ $h_{app}=\varepsilon x^{in}$ with $\varepsilon=10^{-1}$.
  and their sedimentation velocity is computed as $$U_{sed} = \frac{g(\rho_s - \rho_f) d^2}{18 \mu_f (1-\phi_s) F_1 F_2}$$
  where $\mu_f = 10^{-3}$~kg m\textsuperscript{−1} s\textsuperscript{−1} is the dynamic viscosity, $$F_1 = \dfrac{E}{1.9} + 0.85 E^{-2} (1-E^{-1})^{-2/3} \mbox{ and }
  F_2 = \dfrac{{St_0}+45}{{35 St_0}+45}$$ with the Stokes number $$St_0 = \dfrac{(\rho_s - \rho_f)(\rho_s + \frac{\rho_f}{2} g d^3)}{18 \mu_f^2}.$$ \\
- The friction coefficient is $C_{fric}=0.5$ and the $C_{sed}$ values computed thanks to Algorithm~\ref{algo:calib_final} with $\Omega = ]0.5,5[$ are
+ The friction coefficient is $C_{fric}=0.5$ and the $C_{sed}$ values computed thanks to Algorithm~\ref{algo:calib_final} with $\Omega = \left] 1.0,4.5 \right[ $, rounded to three decimal places, are
  \begin{equation}
      C_{sed}=\{1.193, 1.103, 1.461, 1.648, 2.432, 3.113\}.
      \label{eq:csed}
 \end{equation}
 %  $$C_{sed}=\{1.193, 1.103, 1.461, 1.648, 2.432, 3.113\}.$$
  The gravity is taken as $g=9.81$~m s\textsuperscript{-2}. \\
- For the numerical simulations, the space step is $dx=0.005$~m. \\
+ For the numerical simulations, the space step is $dx\approx0.00546$~m. \\
 
-
+Remark: Due to the grid resolution and minor floating point differences between compilers, one can obtain values that may differ from those stated in equation~\eqref{eq:csed}.\\
 
 
 
 Following the approach of the original paper, several numerical experiments were performed, depending on the value of the expansion ranging from 12\% to 42\%. They are compared to experimental measures in figure~\ref{fig:res}.
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.12.pdf}
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.17.pdf}\\
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.22.pdf}
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.28.pdf}\\
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.35.pdf}
-    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_E_1.42.pdf}\\
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.12.pdf}
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.17.pdf}\\
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.22.pdf}
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.28.pdf}\\
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.35.pdf}
+    \includegraphics[width=0.45 \textwidth]{Figures/my_csed_script_E_1.42.pdf}\\
     \caption{Numerical and experimental results obtain in this study.}
     \label{fig:res}
 \end{figure}
@@ -326,7 +326,7 @@ At this point, we were able to reproduce the results of the original article, ba
 
 \section{Comparison with the original results and prospects}\label{sec:comp}
 
-At this point, we decided to ask the original authors to share their numerical results, in order to make a precise comparison of the deposit. Results are plotted in figure~\ref{fig:comp_opt} and figure~\ref{fig:comp}.
+At this point, we decided to ask the original authors to share their numerical results, in order to make a precise comparison of the deposit. Their data are not published and may not be reproduced without being sent directly by the authors via a private communication. Results are plotted in figure~\ref{fig:comp_opt} and figure~\ref{fig:comp}.
 
 \begin{figure}[ht!]
     \centering
@@ -341,23 +341,23 @@ At this point, we decided to ask the original authors to share their numerical r
         \toprule
         \textbf{E} & \textbf{Code version} & $\mathbf{L^1}$ & $\mathbf{L^2}$ & $\mathbf{L_{\infty}}$ \\
         \midrule
-        \multirow{2}{*}{1.12} & Original & 2.220045e-01 & 2.579376e-01 & 4.347826e-01 \\
-                               & Reproduction  & 2.185487e-01 & 2.545067e-01 & 4.347826e-01 \\
+        \multirow{2}{*}{1.12} & Original & 1.911432e-01 & 2.275980e-01 & 3.695652e-01 \\
+                              & Reproduction  & 1.852252e-01 & 2.217949e-01 & 3.695652e-01 \\
         \midrule
-        \multirow{2}{*}{1.17} & Original & 3.254562e-01 & 3.467081e-01 & 4.000000e-01 \\
-                               & Reproduction  & 3.171704e-01 & 3.395263e-01 & 4.000000e-01 \\
+        \multirow{2}{*}{1.17} & Original & 3.210050e-01 & 3.548951e-01 & 4.488373e-01 \\
+                              & Reproduction  & 3.121236e-01 & 3.460800e-01 & 4.307397e-01 \\
         \midrule
-        \multirow{2}{*}{1.22} & Original & 2.916570e-01 & 3.219815e-01 & 5.333333e-01 \\
-                               & Reproduction  & 2.824498e-01 & 3.143024e-01 & 5.333333e-01 \\
+        \multirow{2}{*}{1.22} & Original & 2.666600e-01 & 2.983491e-01 & 4.333333e-01 \\
+                              & Reproduction  & 2.577054e-01 & 2.888450e-01 & 4.333333e-01 \\
         \midrule
-        \multirow{2}{*}{1.28} & Original & 2.361637e-01 & 2.610457e-01 & 3.357710e-01 \\
-                               & Reproduction  & 2.306824e-01 & 2.561719e-01 & 3.333333e-01 \\
+        \multirow{2}{*}{1.28} & Original & 2.298696e-01 & 2.584294e-01 & 3.329979e-01 \\
+                              & Reproduction  & 2.225409e-01 & 2.504013e-01 & 3.154503e-01 \\
         \midrule
-        \multirow{2}{*}{1.35} & Original & 1.391942e-01 & 1.598507e-01 & 2.446122e-01 \\
-                               & Reproduction  & 1.377796e-01 & 1.567616e-01 & 2.281177e-01 \\
+        \multirow{2}{*}{1.35} & Original & 1.673198e-01 & 1.826379e-01 & 2.439453e-01 \\
+                              & Reproduction  & 1.634317e-01 & 1.751375e-01 & 2.282033e-01 \\
         \midrule
-        \multirow{2}{*}{1.42} & Original & 2.076277e-01 & 2.047887e-01 & 2.378280e-01 \\
-                               & Reproduction  & 2.022209e-01 & 1.999374e-01 & 2.410582e-01 \\
+        \multirow{2}{*}{1.42} & Original & 1.971641e-01 & 1.935115e-01 & 1.932352e-01 \\
+                              & Reproduction  & 1.952861e-01 & 1.919743e-01 & 1.957157e-01 \\
         \bottomrule
     \end{tabular}
     \label{table:err-opt}
@@ -377,25 +377,25 @@ At this point, we decided to ask the original authors to share their numerical r
         \toprule
         \textbf{E} & \textbf{Code version} & $\mathbf{L^1}$ & $\mathbf{L^2}$ & $\mathbf{L_{\infty}}$ \\
         \midrule
-        \multirow{2}{*}{1.12} & Original & 2.247957e-01 & 2.606166e-01 & 4.347826e-01 \\
-                               & Reproduction  & 2.185487e-01 & 2.545067e-01 & 4.347826e-01 \\
+        \multirow{2}{*}{1.12} & Original & 1.951209e-01 & 2.308435e-01 & 3.695652e-01 \\
+                              & Reproduction  & 1.852252e-01 & 2.217949e-01 & 3.695652e-01 \\
         \midrule
-        \multirow{2}{*}{1.17} & Original & 3.300876e-01 & 3.506894e-01 & 4.038600e-01 \\
-                               & Reproduction  & 3.171704e-01 & 3.395263e-01 & 4.000000e-01 \\
+        \multirow{2}{*}{1.17} & Original & 3.256668e-01 & 3.593504e-01 & 4.533853e-01 \\
+                              & Reproduction  & 3.121236e-01 & 3.460800e-01 & 4.307397e-01 \\
         \midrule
-        \multirow{2}{*}{1.22} & Original & 2.996789e-01 & 3.319884e-01 & 5.333333e-01 \\
-                               & Reproduction  & 2.824498e-01 & 3.143024e-01 & 5.333333e-01 \\
+        \multirow{2}{*}{1.22} & Original & 2.733992e-01 & 3.056429e-01 & 4.333333e-01 \\
+                              & Reproduction  & 2.577054e-01 & 2.888450e-01 & 4.333333e-01 \\
         \midrule
-        \multirow{2}{*}{1.28} & Original & 2.463630e-01 & 2.713444e-01 & 3.633247e-01 \\
-                               & Reproduction  & 2.306824e-01 & 2.561719e-01 & 3.333333e-01 \\
+        \multirow{2}{*}{1.28} & Original & 2.381570e-01 & 2.672375e-01 & 3.425844e-01 \\
+                              & Reproduction  & 2.225409e-01 & 2.504013e-01 & 3.154503e-01 \\
         \midrule
-        \multirow{2}{*}{1.35} & Original & 1.527077e-01 & 1.725377e-01 & 2.573584e-01 \\
-                               & Reproduction  & 1.377796e-01 & 1.567616e-01 & 2.281177e-01 \\
+        \multirow{2}{*}{1.35} & Original & 1.764615e-01 & 1.916419e-01 & 2.576778e-01 \\
+                              & Reproduction  & 1.634317e-01 & 1.751375e-01 & 2.282033e-01 \\
         \midrule
-        \multirow{2}{*}{1.42} & Original & 2.076981e-01 & 2.041882e-01 & 2.334330e-01 \\
-                               & Reproduction  & 2.022209e-01 & 1.999374e-01 & 2.410582e-01 \\
+        \multirow{2}{*}{1.42} & Original & 1.972456e-01 & 1.925377e-01 & 1.885702e-01 \\
+                              & Reproduction  & 1.952861e-01 & 1.919743e-01 & 1.957157e-01 \\
         \bottomrule
-    \end{tabular}
+        \end{tabular}
     \label{table:err}
 \end{table}
 
@@ -491,4 +491,5 @@ A more in-depth analysis must be carried out to analyse these differences. A com
 
 
 \section*{Acknowledgments}
-This work was funded by the France 2030 program "ANR-23-EXMA-0004" (PEPR Maths-Vives) through the Complexflows project.
+This work was funded by the France 2030 program "ANR-23-EXMA-0004" (PEPR Maths-Vives) through the Complexflows project.\\
+We would like to thank the two reviewers R. Saleem and K. Hinsen for their comments that helped us to improve the article and the reproducibility of the results.
